@@ -5,10 +5,14 @@ import {CurrencyService} from "./src/currency";
 import {TerabyteGpuProvider} from "./src/terabyte-gpu-provider";
 import * as fs from 'fs';
 
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-extra');
+
+// add stealth plugin and use defaults (all evasion techniques)
+const StealthPlugin = require('puppeteer-extra-plugin-stealth');
+puppeteer.use(StealthPlugin());
 
 (async () => {
-    const browser = await puppeteer.launch({headless: false, defaultViewport: null});
+    const browser = await puppeteer.launch({headless: true, defaultViewport: null});
 
     try {
         const currencyService = new CurrencyService();

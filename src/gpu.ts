@@ -1,6 +1,6 @@
-import {Browser} from "puppeteer";
 import {CurrencyService} from "./currency";
 import Big from "big.js";
+import {Browser} from "puppeteer";
 
 const axios = require('axios');
 
