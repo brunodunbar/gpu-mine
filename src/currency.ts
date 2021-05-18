@@ -30,7 +30,7 @@ export class CurrencyService {
         }
 
         const exchangeRate = Big(conversion.exchangeRate);
-        return Number(Big(value).mul(exchangeRate).toFixed(2));
+        return Number(Big(value || 0).mul(exchangeRate).toFixed(2));
     }
 
     async convertBtcToBrl(value: number): Promise<number> {
